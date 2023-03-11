@@ -3,7 +3,7 @@ from typing import List, Tuple
 
 
 class Game:
-    COLORS = ["R", "G", "B", "B", "W", "S"]
+    COLORS = ["R", "G", "B", "C", "M", "Y"]
     TRIES = 10
     CODE_LENGTH = 4
 
