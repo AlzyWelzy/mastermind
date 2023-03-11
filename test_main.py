@@ -25,7 +25,7 @@ class Game:
             guess = input("Guess: ").upper().split(" ")
 
             if len(guess) != cls.CODE_LENGTH:
-                print(f"YOU MUST GET {cls.CODE_LENGTH} COLORS.")
+                print(f"You must enter {cls.CODE_LENGTH} colors.")
                 continue
 
             invalid_colors = [color for color in guess if color not in cls.COLORS]
@@ -63,7 +63,9 @@ class Game:
         return correct_pos, incorrect_pos
 
     def play(self) -> None:
-        print(f"WELCOME TO mastermind, you have {self.TRIES} to guess the code...")
+        print(
+            f"WELCOME TO MASTERMIND, you have {self.TRIES} tries to guess the code..."
+        )
         print("The valid colors are", *self.COLORS)
 
         for attempt in range(1, self.TRIES + 1):
@@ -87,11 +89,11 @@ class Game:
 
 def main() -> None:
     while True:
-        mastermind = Game()
-        mastermind.play()
-        again = input("Would you like to play again? (y/n): ")
+        game = Game()
+        game.play()
+        play_again = input("Would you like to play again? (y/n): ").lower()
 
-        if again.lower() == "n":
+        if play_again == "n":
             break
 
 
